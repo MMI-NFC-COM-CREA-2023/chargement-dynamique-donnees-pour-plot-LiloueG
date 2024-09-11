@@ -27,7 +27,6 @@
             <figcaption>"L'Infini", une œuvre qui questionne le temps.</figcaption>
         </figure>
         <div id="graph1" class="artistic-graph">
-            Graphique 1
         </div>
     </section>
 
@@ -41,14 +40,45 @@
             <figcaption>"Le Souffle de la Terre", une connexion avec la nature.</figcaption>
         </figure>
         <div id="graph2" class="artistic-graph">
-            Graphique 2
         </div>
     </section>
 
     <script type="module">
+      import * as Plot from "https://cdn.jsdelivr.net/npm/@observablehq/plot@0.6/+esm";
       const dataResponse = await fetch("./dataCorected.json");
       const data = await dataResponse.json();
       console.log(data);
+
+      const plot = Plot.plot({
+        x: { grid: true, label: "Années" },
+        y: { grid: true, label: "Gain en euros" },
+        color: { legend: true },
+        title: "Evolution des gains du vainqueur au grand Chelem de 1968 à 2022",
+        subtitle: "Evolution des gains du vainqueur au grand Chelem de 1968 à 2022",
+        marginLeft: 75,
+        marks: [
+            Plot.lineY(data, {
+            x: "YEAR",
+            y: "WINNER_PRIZE",
+            stroke: "TOURNAMENT",
+            tip: true
+            })
+        ]
+        });
+        const div = document.querySelector("#graph1");
+        div.append(plot);
+
+        const dataResponse1 = await fetch("alphabet.json");
+        const data1 = await dataResponse1.json();
+        console.log(data1);
+
+        const plot1 = Plot.plot({
+        marks: [Plot.dot(data1, { x: "letter", y: "frequency", tip: true })]
+        });
+
+        const div1 = document.querySelector("#graph2");
+        div1.append(plot1);
+
 
     </script>
 
