@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Site Artistique</title>
+    <title>Analyse des Données</title>
     <link rel="stylesheet" href="styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Raleway:wght@400&display=swap" rel="stylesheet">
 </head>
@@ -12,19 +12,19 @@
     <!-- Menu avec des liens d'ancrage -->
     <nav>
         <ul>
-            <li><a href="#section1">Section 1</a></li>
-            <li><a href="#section2">Section 2</a></li>
+            <li><a href="#section1">Évolution des gains au Grand Chelem</a></li>
+            <li><a href="#section2">Fréquence des lettres dans l'alphabet</a></li>
         </ul>
     </nav>
 
     <!-- Section 1 -->
     <section id="section1">
-        <h2>Section 1</h2>
+        <h2>Évolution des gains du vainqueur au Grand Chelem</h2>
         <p>
-            Plongez dans un univers artistique où chaque détail compte. Découvrez des œuvres d’art abstraites qui parlent à l'âme, captivant l'imaginaire avec des couleurs et des formes inattendues.
+            Cette section présente l'évolution des gains remportés par les vainqueurs des tournois de tennis du Grand Chelem, de 1968 à 2022. Vous pourrez visualiser les hausses significatives des prix à travers les différentes compétitions majeures.
         </p>
         <figure>
-            <figcaption>"L'Infini", une œuvre qui questionne le temps.</figcaption>
+            <figcaption>Graphique montrant l'évolution des gains du vainqueur au Grand Chelem.</figcaption>
         </figure>
         <div id="graph1" class="artistic-graph">
         </div>
@@ -32,12 +32,12 @@
 
     <!-- Section 2 -->
     <section id="section2">
-        <h2>Section 2</h2>
+        <h2>Fréquence des lettres dans l'alphabet</h2>
         <p>
-            L'inspiration se trouve dans les moments les plus simples. Une ombre dans la lumière, une forme inattendue dans la nature, tout devient une muse pour celui qui sait observer.
+            Ici, vous pouvez observer un graphique sur la fréquence des lettres dans l'alphabet, basé sur leur utilisation dans la langue française. Ce type d'analyse est utile pour les études linguistiques et cryptographiques.
         </p>
         <figure>
-            <figcaption>"Le Souffle de la Terre", une connexion avec la nature.</figcaption>
+            <figcaption>Graphique représentant la fréquence d'utilisation des lettres de l'alphabet.</figcaption>
         </figure>
         <div id="graph2" class="artistic-graph">
         </div>
@@ -54,7 +54,6 @@
         y: { grid: true, label: "Gain en euros" },
         color: { legend: true },
         title: "Evolution des gains du vainqueur au grand Chelem de 1968 à 2022",
-        subtitle: "Evolution des gains du vainqueur au grand Chelem de 1968 à 2022",
         marginLeft: 75,
         marks: [
             Plot.lineY(data, {
@@ -79,9 +78,7 @@
         const div1 = document.querySelector("#graph2");
         div1.append(plot1);
 
-
     </script>
-
 
 </body>
 </html>
